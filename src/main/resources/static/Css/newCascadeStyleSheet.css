@@ -14,3 +14,28 @@ Click nbfs://nbhost/SystemFileSystem/Templates/Other/CascadeStyleSheet.css to ed
 p{
     background-color: seashell;
 }
+d:link{
+    
+    color: chocolate;
+}
+a:visited{
+    color: darkblue;
+}
+
+a:hover{
+    transition: 1s;
+    background: black;
+    color: white;
+   
+}
+
+a:active{
+    background: red;
+    color: white;
+   
+}
+p:nth-child(odd){ /*podria hacer esto con even*/
+    background: black;
+    background-color: graytext;
+   
+}
