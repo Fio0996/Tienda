@@ -11,7 +11,7 @@ body {
     background-color: navy;
     height: 12%;
     position: fixed;
-    top: o;
+    top: 0;
     left: 0;
     width: 100%;
 }
@@ -28,7 +28,7 @@ body {
 }
 .logo{
     font-size: 32px;
-    font: bold;
+    font:fantasy;
     padding: 0 40px;
-    line height: 80px;
+    height:  80px;
 }
