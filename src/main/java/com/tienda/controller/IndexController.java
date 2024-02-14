@@ -18,3 +18,13 @@ public class IndexController {
         return "index";
     }
 }
+/**
+ *
+ * modelo mvc
+ * categoria service
+ * categoria controller
+ * se divide todo en capas de presentacion de negocio y de datos asi se reutiliza el codigo y no ser duplica esto y 
+ * esto nos ayuda a que cualquier tipo de almacenamiento va a estar en base de datos
+ * solo se modifica en un solo lugar.
+ * Cateoria Dao nos genera un objeto hay que crear las dependencias
+ */
