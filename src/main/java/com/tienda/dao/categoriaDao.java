@@ -11,6 +11,6 @@ import org.springframework.data.jpa.repository.JpaRepository;
  *
  * @author Fio
  */
-public interface categoriaDao extends JpaRepository<Categoria, Long> {
+public interface CategoriaDao extends JpaRepository<Categoria, Long> {
     
 }
