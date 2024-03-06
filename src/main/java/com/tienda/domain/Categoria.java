@@ -22,7 +22,7 @@ public class Categoria implements Serializable {
     @GeneratedValue(strategy =GenerationType.IDENTITY)
     @Column(name="id_categoria")//dejar llave primaria bien detallada
     private Long idCategoria; //id_categoria (es equivalente a idCategoria entonces se ponen diferentes en la base de datos)
-    private String description;
+    private String descripcion;
     private String rutaImagen;
     private boolean activo;
 
@@ -30,7 +30,7 @@ public class Categoria implements Serializable {
     }
 
     public Categoria(String description, String rutaImagen, boolean activo) {
-        this.description = description;
+        this.descripcion = description;
         this.rutaImagen = rutaImagen;
         this.activo = activo;
     }
