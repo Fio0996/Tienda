@@ -1,7 +1,4 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
- */
+
 package com.tienda.service.impl;
 
 import com.tienda.domain.Usuario;
@@ -18,10 +15,6 @@ import org.springframework.stereotype.Service;
 import org.springframework.ui.Model;
 import org.springframework.web.multipart.MultipartFile;
 
-/**
- *
- * @author Fio
- */
 @Service
 public class RegistroServiceImpl implements RegistroService {
 
@@ -33,12 +26,12 @@ public class RegistroServiceImpl implements RegistroService {
     private MessageSource messageSource;  //creado en semana 4...
     @Autowired
     private FirebaseStorageServiceImpl firebaseStorageService;
+    //metodo que se llama al dar click al link del correo
+    // mete los datos
 
     @Override
     public Model activar(Model model, String username, String clave) {
-        Usuario usuario = 
-                usuarioService.getUsuarioPorUsernameYPassword(username, 
-                        clave);
+        Usuario usuario = usuarioService.getUsuarioPorUsernameYPassword(username,  clave);
         if (usuario != null) {
             model.addAttribute("usuario", usuario);
         } else {
@@ -55,11 +48,12 @@ public class RegistroServiceImpl implements RegistroService {
         }
         return model;
     }
-
+//metodo al darle submit al activar
     @Override
     public void activar(Usuario usuario, MultipartFile imagenFile) {
         var codigo = new BCryptPasswordEncoder();
         usuario.setPassword(codigo.encode(usuario.getPassword()));
+        usuario.setActivo(true);
 
         if (!imagenFile.isEmpty()) {
             usuarioService.save(usuario, false);
@@ -72,6 +66,7 @@ public class RegistroServiceImpl implements RegistroService {
         usuarioService.save(usuario, true);
     }
 
+    
     @Override
     public Model crearUsuario(Model model, Usuario usuario) 
             throws MessagingException {

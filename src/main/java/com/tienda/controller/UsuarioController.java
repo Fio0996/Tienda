@@ -55,6 +55,7 @@ public class UsuarioController {
             usuario.setPassword(actual.getPassword());
             usuario.setUsername(actual.getUsername());
             usuario.setRoles(actual.getRoles());
+            usuario.setActivo(actual.isActivo());
             if (imagenFile.isEmpty()) {
                 usuario.setRutaImagen(actual.getRutaImagen());
             }
@@ -70,7 +71,7 @@ public class UsuarioController {
                             "usuario",
                             usuario.getIdUsuario()));
         }
-        usuarioService.save(usuario, true);
+        usuarioService.save(usuario, nuevo);
         return "redirect:/usuario/listado";
     }
 
